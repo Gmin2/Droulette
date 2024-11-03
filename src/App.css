@@ -1,0 +1,36 @@
+.grad {
+    position: relative;
+  }
+  
+  .grad:before {
+    content: "";
+    background-image: url("./assets/noise.png"), url("./assets/bg001.jpg");
+    background-repeat: repeat, repeat;
+    background-size: auto, 200px auto;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0.4;
+  }
+  
+  .grad:after {
+    content: "";
+    background-image: radial-gradient(rgba(0, 0, 0, 0.2), black);
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+  
+  .main-content {
+    position: relative;
+    z-index: 1;
+  }
+  
