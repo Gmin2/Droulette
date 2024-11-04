@@ -1,4 +1,4 @@
-export const MoneyPoolABI = [
+"abi": [
   {
     "inputs": [],
     "stateMutability": "nonpayable",
@@ -275,5 +275,4 @@ export const MoneyPoolABI = [
     "stateMutability": "view",
     "type": "function"
   }
-] as const;
-  
+]

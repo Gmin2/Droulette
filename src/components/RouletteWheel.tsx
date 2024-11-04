@@ -1,5 +1,7 @@
 // src/components/RouletteWheel.tsx
 import React, { useState } from 'react';
+// Import the image correctly
+import rouletteImage from '../assets/roullete.jpg';  // Adjust this path based on your file structure
 
 interface RouletteWheelProps {
     spinning: boolean;
@@ -10,24 +12,32 @@ const RouletteWheel: React.FC<RouletteWheelProps> = ({ spinning, result }) => {
     const [localResult, setLocalResult] = useState<number | undefined>(result);
 
     const handleSpin = () => {
-        // Simulate spinning
         setLocalResult(undefined);
         setTimeout(() => {
-            const randomNumber = Math.floor(Math.random() * 37); // 0-36
+            const randomNumber = Math.floor(Math.random() * 37);
             setLocalResult(randomNumber);
-        }, 2000); // 2 seconds delay to simulate spinning
+        }, 2000);
     };
 
     return (
         <div className="flex flex-col items-center space-y-4">
-            <div className="bg-red-600 text-white rounded-full w-48 h-48 flex items-center justify-center text-3xl font-bold">
-                {spinning ? (
-                    "Spinning..."
-                ) : localResult !== undefined ? (
-                    localResult
-                ) : (
-                    "Click to Spin"
-                )}
+            <div className="relative w-[300px] h-[300px]"> {/* Increased size */}
+                <img 
+                    src={rouletteImage}
+                    alt="Roulette Wheel"
+                    className={`w-full h-full rounded-full object-cover ${spinning ? 'animate-spin' : ''}`}
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="bg-black/50 px-4 py-2 rounded text-white text-3xl font-bold">
+                        {spinning ? (
+                            "Spinning..."
+                        ) : localResult !== undefined ? (
+                            localResult
+                        ) : (
+                            "Click to Spin"
+                        )}
+                    </span>
+                </div>
             </div>
             <button
                 onClick={handleSpin}
