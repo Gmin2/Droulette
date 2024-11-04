@@ -1,50 +1,49 @@
-# React + TypeScript + Vite
+# Decentralized Roulette Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A blockchain-based roulette game built on the Oasis Sapphire Network where players can bet on numbers, colors, or even/odd outcomes.
 
-Currently, two official plugins are available:
+## Smart Contracts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The game consists of two main contracts:
+- `MoneyPool.sol`: Handles the betting pool and player contributions
+- `RouletteGame.sol`: Implements the roulette game logic and random number generation
 
-## Expanding the ESLint configuration
+### Contract Addresses (Sapphire Testnet)
+- MoneyPool: `0x150eA9e7BEcD5291B8bD27D935E08A25f41bD4d9`
+- RouletteGame: `0x9FB342f34962898D20EB6bCa1C5f3fbaD2Bb1840`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Game Features
 
-- Configure the top-level `parserOptions` property like this:
+- Create new game sessions with customizable duration
+- Place bets on:
+  - Numbers (0-36)
+  - Colors (Red/Black)
+  - Parity (Even/Odd)
+- Automatic random number generation using Sapphire's secure RNG
+- Winner selection and prize distribution
+- 2% platform fee on winnings
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## How to Play
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Connect your wallet (MetaMask)
+2. Create a new game or join an existing one
+3. Place your bet:
+   - Choose betting type (Number/Color/Parity)
+   - Select your choice
+   - Enter bet amount
+4. Wait for game completion
+5. Winners receive payouts automatically
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Testing Guide
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Prerequisites
+- MetaMask wallet
+- Testnet ROSE tokens
+- Browser with Web3 support
+
+### Setting Up a Game
+
+1. Connect to Sapphire Testnet
+2. Create a new game:
+3. Place the bet in the moneyPool
+4. Spin the wheel
