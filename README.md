@@ -1,6 +1,7 @@
 # Decentralized Roulette Game
 
 A blockchain-based roulette game built on the Oasis Sapphire Network where players can bet on numbers, colors, or even/odd outcomes.
+https://www.loom.com/share/9d834fdd53494752a79aa2472ed34dc3?sid=0de80e9c-da54-40b5-b7b5-900308b24d37
 
 ## Smart Contracts
 
