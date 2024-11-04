@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGameContext } from '../context/GameContext';
 import Layout from '../components/Layout';
+import rouletteImage from '../assets/roullete.jpg'; // Adjust path based on your image location
 
 const HomePage: React.FC = () => {
     const { account, createGame, loading } = useGameContext();
@@ -19,7 +20,6 @@ const HomePage: React.FC = () => {
             console.log("Game created with ID:", gameId);
 
             if (gameId) {
-                // Add a small delay to ensure the blockchain has updated
                 setTimeout(() => {
                     navigate(`/game/${gameId}`);
                 }, 1000);
@@ -40,6 +40,16 @@ const HomePage: React.FC = () => {
                 <h1 className="text-4xl font-bold text-center mb-8">
                     Welcome to Roulette Game
                 </h1>
+                
+                {/* Added Roulette Image */}
+                <div className="flex justify-center mb-8">
+                    <img 
+                        src={rouletteImage}
+                        alt="Roulette Wheel"
+                        className="w-64 h-64 object-cover rounded-full shadow-lg"
+                    />
+                </div>
+
                 {account && (
                     <div className="bg-white shadow sm:rounded-lg p-6">
                         <h2 className="text-lg font-medium mb-4">Create New Game</h2>

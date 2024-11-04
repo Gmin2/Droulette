@@ -2,23 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  content: "";
-  background-image: url('./assets/bg.jpg');
-	background-image: url('./assets/noise.png'), url('./assets/bg001.jpg');
-	background-repeat: repeat, repeat;
-	background-size: auto, 200px auto;
-	position:relative;
-	z-index: -1;
-	top:0px;
-	bottom:0px;
-	left:0px;
-	right:0px;
-	width:100%;
-  opacity: 0.4;
-}
 
-.grad:before,
-.grad:after {
-  content: none; /* Remove pseudo-elements to simplify layout */
-}
+
